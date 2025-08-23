@@ -2,8 +2,8 @@ name: Just pushing
 on:
   push:
     branches:
-      - feature/*
-      - main
+      - feature/PM-7674
+      
 
 jobs:
   push:
@@ -15,7 +15,7 @@ jobs:
 
       - name: Debug
         run: |
-          echo "event name is:" ${{ github.event.name }}
-          echo "Pushed by" ${{ github.actor }} "to" "${{ github.ref }}"
+          echo "event name is:" ${{ github.event_name }}
+          echo "Pushed by ${{ github.actor }} to ${{ github.ref }}"
 
 
