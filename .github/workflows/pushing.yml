@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  pull-and-pr:
+  push:
     runs-on: ubuntu-latest
 
     steps:
@@ -15,7 +15,7 @@ jobs:
 
       - name: Debug
         run: |
-          echo "event name is:" ${{ github.event_name }}
-          echo "Pushed by" ${{ github.actor }} "to" ${{ github.ref }}
+          echo "event name is:" ${{ github.event.name }}
+          echo "Pushed by" ${{ github.actor }} "to" "${{ github.ref }}"
 
 
