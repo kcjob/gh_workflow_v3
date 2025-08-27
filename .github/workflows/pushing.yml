@@ -3,13 +3,13 @@ on:
   push:
     branches:
       - feature/PM-7674
-      
 
 jobs:
   push:
     runs-on: ubuntu-latest
 
     steps:
+      
       - name: Checkout code
         uses: actions/checkout@v4
 
@@ -22,5 +22,6 @@ jobs:
         run: |
           echo "event name is:" ${{ github.event_name }}
           echo "Pushed by ${{ github.actor }} to ${{ github.ref }}"
-
+          echo "URL ${{ github.api_url }}"
+          echo "Repository ${{ github.repository }}"
 
